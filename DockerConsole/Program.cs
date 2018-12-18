@@ -1,20 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace DockerConsole
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            double sum = 0.0;
-            double i = 0.0;
-            while (1 == 1)
-            {
-                sum += 4.0 * Math.Pow(-1.0, i) / (2.0 * i + 1);
-                if (i % 10000000 == 0)
-                    Console.WriteLine("{0}      {1}", DateTime.Now, sum);
-                i++;
-            }
+            CreateWebHostBuilder(args).Build().Run();
         }
+
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>();
     }
 }
