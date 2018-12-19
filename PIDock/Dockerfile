@@ -3,8 +3,8 @@ WORKDIR /app
 
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
-COPY PIDock/PIDock.csproj PIDock/
-RUN dotnet restore PIDock/PIDock.csproj
+COPY PIDock.csproj PIDock/
+RUN dotnet restore PIDock.csproj
 COPY . .
 WORKDIR /src/PIDock
 RUN dotnet build PIDock.csproj -c Release -o /app
