@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  pidock:
+    image: ${DOCKER_REGISTRY-}pidock
+    build:
+      context: .
+      dockerfile: PIDock/Dockerfile

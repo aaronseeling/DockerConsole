@@ -7,8 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DockerConsole
+namespace MakingPi
 {
+
     public class Startup
     {
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -35,7 +36,7 @@ namespace DockerConsole
         {
             double i = 0.0;
             double sum = 0.0;
-            while(1==1)
+            while (1 == 1)
             {
                 sum += 4.0 * Math.Pow(-1.0, i) / (2.0 * i + 1.0);
                 if (i % 10000000 == 0)
